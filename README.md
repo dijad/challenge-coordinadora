@@ -16,6 +16,8 @@ Luego de haber puesto en marcha el proyecto, en el navegador se puede dirigir a 
 
 https://www.youtube.com/watch?v=Gl1mqFCIzX0
 
+El correo con los permisos para visualizar el video es: **guillermov@coordinadora.com**
+
 ## Puntos teóricos
 
 ### - Con sus propias palabras explique que es una inyección de dependencias y para qué sirve.
