@@ -30,3 +30,5 @@ Luego de haber puesto en marcha el proyecto, en el navegador se puede dirigir a 
    Las colecciones son la equivalencia de las tablas para NOSQL, y los documentos son la equivalencia de los registro.
 ### - Si una aplicación está sacando error de CORS a que se está refiriendo?
    Significa que fallo la obtención de un recurso de otro servidor, probablemente por no tener los permisos adecuados para su acceso.
+#### PD
+   Muchas gracias por la oportunidad en esta convocatoria, realmente fue un reto y estoy contento haberlo finalizado, pues, como dije en la primera reunión, el frontend no es mi ahabilidadm ás fuerte, sin embargo, pude realizar el reto de manera "manual", pues no conozco acerca de ningun framework para fronend, sin embargo, empezaré a aprenderlo, me hubiera gustado aplicrlo en el reto, pero aprender tomaba tiempo y luego aplicarlo mucho más, sin embargo, recalcar en mis ganas de aprender, por lo cual en caso de ser seleccionado, tendré el gusto de aprender las herramientas necesarias para desarrollar un excelente papel.
