@@ -1,0 +1,332 @@
+swagger: 2.0,
+info:
+  title: Coordinadora challenge API,
+  description: API para el reto de Coordinadora para desarrolladores,
+  version: 1.0.0
+  contact:
+    name: Diego sánchez
+    email: finalcooldown@gmail.com
+  license:
+    name: Apache 2.0,
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: http://localhost:4000/challenge
+schemes:
+  - http
+tags:
+  - name: Promedio
+  - name: String manipulation
+  - name: Suma de arreglos
+  - name: Transformación de arreglo
+  - name: My Cows
+  - name: Tracking
+  - name: Score
+  - name: Docs
+
+paths:
+  /average:
+    post:
+      tags:
+        - Promedio
+      description: Promedio entre dos números
+      produces: application/json
+      parameters:
+        - in: body
+          description: Primer número para realizar el promedio
+          required: true
+          example: { "a": 65, "b": 56 }
+          schema:
+            type: object
+            properties:
+              a:
+                type: number
+                example: 65
+              b:
+                type: number
+                example: 56
+      responses:
+        200:
+          description: Promedio realizado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: number
+                    description: Promedio entre los dos números ingresados
+  /string-manipulation:
+    post:
+      tags:
+        - String manipulation
+      description: Elimina (!) al final de una cadena de texto
+      produces: application/json
+      parameters:
+        - in: body
+          description: Cadena de texto a la cual se le hará el procesamiento
+          required: true
+          example: { "string": "Hi!!!" }
+          schema:
+            type: object
+            properties:
+              String:
+                type: text
+                example: "Hi!!!"
+      responses:
+        200:
+          description: Procesamiento de texto realizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: text
+                    description: Texto resultante de este procesamiento
+  /sum-array:
+    post:
+      tags:
+        - Suma de arreglos
+      description: Realiza las siguientes operaciones,
+        1. La suma total de la matriz
+        2. La suma de sus enteros positivos
+        3. La suma de los números pares
+        4. La suma de los números impares
+        Importante, si la matriz no contiene nada, el resultad debe ser 0.
+      produces: application/json
+      parameters:
+        - in: body
+          description: Matriz base para realizar las operaciones mencionadas
+          required: true
+          example: { "matrix": [[0, 0, 0], [1, 1, 1], [1, 1, 1]] }
+          schema:
+            type: object
+            properties:
+              matrix:
+                type: array
+                example: [[0, 0, 0], [1, 1, 1], [1, 1, 1]]
+      responses:
+        200:
+          description: Procesamiento del arreglo realizado con éxito para
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      sumaTotal:
+                        type: number
+                        description: Suma total de los elementos del arreglo
+                      sumaPOsitivos:
+                        type: number
+                        description: Suma de todos los números positivos del arreglo
+                      sumaPares:
+                        type: number
+                        description: Suma de todos los números pares del arreglo
+                      sumaImpares:
+                        type: number
+                        description: Suma de todos los números impares del arreglo
+  /transform-array:
+    post:
+      tags:
+        - Transformación de arreglo
+      description:
+        Este método debe retornar un arreglo unidimensional solo con los
+        elementos de tipo entero y en el orden que se le envía (ASC o DESC)
+      produces: application/json
+      parameters:
+        - in: body
+          description: Matriz sobre la cual se realizará la transformación y el orden del resultado (ADC o DESC)
+          required: true
+          example:
+            {
+              "orden": "DESC",
+              "matrix": [[5, "a", 3], [4, "a3", "t"], [2, "b", "4t6"]]
+            }
+          schema:
+            type: object
+            properties:
+              orden:
+                type: text
+                example: "ASC"
+              matrix:
+                type: array
+                example: [[5, "a", 3], [4, "a3", "t"], [2, "b", "4t6"]]
+      responses:
+        200:
+          description: Transfomración realizada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: array
+                    description: Arreglo resultante de la transformación en el orden solicitados
+  /mycows:
+    post:
+      tags:
+        - My Cows
+      description:
+        Se recibe un número (n) de vacas, donde se realizará una simulación
+        de una granja, se retornará la producción total de leche por cda dia de la
+        semana, los dias de la semana con mayor y menor producción, el número de la vaca
+        que dió más leche cada dia.
+      produces: application/json
+      parameters:
+        - in: body
+          description: Número de vacas
+          required: true
+          example: { "n": 5 }
+          schema:
+            type: object
+            properties:
+              n:
+                type: number
+                example: 5
+      responses:
+        200:
+          description: Calculo realizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      totalPerDay:
+                        type: array
+                        description: Total de leche producida por dia
+                      lowerProductionDay:
+                        type: number
+                        description: Dia de menos producción
+                      highestProductionDay:
+                        type: number
+                        description: Dia de mayor producción
+                      bestCowsPerDay:
+                        type: array
+                        description: Vaca más productora por dia
+  /tracking/{code}:
+    get:
+      tags:
+        - Tracking
+      description: Se realiza el seguimiento del número de guia definido por paramentro de la ruta
+      produces: application/json
+      parameters:
+        - in: path
+          name: code
+          description: Número de guía para el seguimiento, puede ser código de remisión o etiqueta 1d
+          required: true
+      responses:
+        200:
+          description: Seguimiento de guía obtenido correctamente
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    properties:
+                      response:
+                        type: object
+                        properties:
+                          isError:
+                            type: boolean
+                          status:
+                            type: text
+                          data:
+                            type: object
+                            properties:
+                              codigo_remision:
+                                type: text
+                              nombre_destinatario:
+                                type: text
+                              dir_destinatario:
+                                type: text
+                          unidades:
+                            type: array
+                            items:
+                              type: object
+                              parameters:
+                                etiqueta1d:
+                                  type: text
+                                cantidad_checkpoinst:
+                                  type: number
+                                tracking:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    checkpoint:
+                                      type: text
+                                    tipo:
+                                      type: text
+                  - type: object
+                    properties:
+                      response:
+                        type: object
+                        properties:
+                          isError:
+                            type: boolean
+                          status:
+                            type: text
+                          data:
+                            type: object
+                            properties:
+                              etiqueta:
+                                type: text
+                              informacion_guia:
+                                type: object
+                                properties:
+                                  codigo_remision:
+                                    type: text
+                                  nombre_destinatario:
+                                    type: text
+                                  dir_destinatario:
+                                    type: text
+                              cantidad_checkpoinst:
+                                type: number
+                              tracking:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    checkpoint:
+                                      type: text
+                                    tipo:
+                                      type: text
+  /array-score:
+    post:
+      tags:
+        - Score
+      description:
+        En un método, a partir de una matriz de números enteros enviada por parámetros, retorne
+        una puntuación total basada en los siguientes criterios,
+        1. Agrega 1 punto por cada número par en el arreglo.
+        2. Agrega 3 puntos por cada número impar en el arreglo, exceptuando el número 5
+        3. Agrega 5 puntos a cada número 5 que aparezca en el arreglo.
+        Nota, el 0 es considerado par.
+      produces: application/json
+      parameters:
+        - in: query
+          name: input
+          description: arreglo de números
+          required: true
+          example: 5,5,5
+      responses:
+        200:
+          description: Puntaje obtenido con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: number
+                    description: Puntaje del arreglo ingresado
+  /docs:
+    get:
+      tags:
+        - Docs
+      description: Abre la documentación del reto Coordinadora

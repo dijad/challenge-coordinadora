@@ -1,0 +1,50 @@
+###
+POST http://localhost:4000/challenge/average
+Content-type: application/json
+
+{
+    "a":56,
+    "b":65
+}
+###
+POST http://localhost:4000/challenge/string-manipulation
+Content-type: application/json
+
+{
+    "string":"Hi!!!"
+}
+###
+POST http://localhost:4000/challenge/sum-array
+Content-type: application/json
+
+{
+    "matrix": [[0,0,0],
+                [1,1,1],
+                [1,1,1]]
+}
+###
+POST http://localhost:4000/challenge/transform-array
+Content-type: application/json
+
+{
+    "orden":"DESC",
+    "matrix": [[5,"a",3],
+            [4,"a3","t"],
+            [2,"b","4t6"]]
+}
+###
+POST http://localhost:4000/challenge/mycows
+Content-type: application/json
+
+{
+    "n":4
+}
+###
+GET http://localhost:4000/challenge/tracking/34380016861
+Content-type: application/json
+###
+POST http://localhost:4000/challenge/array-score?input=5,5,5
+Content-type: application/json
+###
+GET http://localhost:4000/challenge/docs
+Content-type: application/json

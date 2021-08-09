@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinadora challenge</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <div role="tabpanel">
+            <nav class="nav nav-tabs" role="tablist">
+              <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+                <li role="presentation" class="nav-item">
+                  <a
+                    class="nav-link active"
+                    href="#average"
+                    aria-controls="average"
+                    data-toggle="tab"
+                    role="tab"
+                    >Promedio</a
+                  >
+                </li>
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#string-manipulation"
+                    aria-controls="string-manipulation"
+                    data-toggle="tab"
+                    role="tab"
+                    >Manipulación de String</a
+                  >
+                </li>
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#sum-array"
+                    aria-controls="um-array"
+                    data-toggle="tab"
+                    role="tab"
+                    >Suma de arreglos</a
+                  >
+                </li>
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#transformation-array"
+                    aria-controls="transformation-array"
+                    data-toggle="tab"
+                    role="tab"
+                    >Transformación de arreglos</a
+                  >
+                </li>
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#mycows"
+                    aria-controls="mycows"
+                    data-toggle="tab"
+                    role="tab"
+                  >
+                    "My cows"</a
+                  >
+                </li>
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#tracking"
+                    aria-controls="tracking"
+                    data-toggle="tab"
+                    role="tab"
+                    >Tracking Coordinadora</a
+                  >
+                </li>
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#score-array" 
+                    aria-controls="score-array"
+                    data-toggle="tab"
+                    role="tab"
+                    >Puntaje del arreglo</a
+                  >
+                <li role="presentation">
+                  <a
+                    class="nav-link"
+                    href="#docs"
+                    aria-controls="docs"
+                    data-toggle="tab"
+                    role="tab"
+                    >Docs</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div
+                class="tab-pane active in"
+                id="average"
+                role="tabpanel"
+                aria-labelledby="nav-average-tab"
+              >
+                <br />
+                <h3>Ejercicio Promedio</h3>
+                <br />
+                <p>
+                  Para este ejericio ingrese una pareja de valores enteros(a ,
+                  b), con los cuales se calculará el promedio. <br /><br />
+                  El error mencionado, aunque no es un error, pues la función
+                  funcionaba, en su lugar no era el resultado esperado el que se
+                  obtenia, se hallaba en la jerarquia de operadores, pues, el
+                  operador de división es el primero en ejecutarse, y este
+                  dividia primero a <b>b</b>, y luego sumaba <b>a</b>, por lo
+                  cual se obtenia el resultado que no era deseado, se soluciona
+                  o se arregla para obtener el resultado del promedio deseado es
+                  aplicar paréntesis para la suma, para que esta operación se
+                  desarrolle antes, pues el desarrollo de los parentesis es la
+                  operación que primero se ejecuta.
+                </p>
+                <form>
+                  <div class="form-group">
+                    <label for="inputA">Ingrese el valor de <b>a</b></label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputA"
+                      aria-describedby="aHelp"
+                      placeholder="valor de a"
+                    />
+                    <small id="aHelp" class="form-text text-muted"
+                      >Ingrese un valor entero para <b>a</b> .</small
+                    >
+                  </div>
+                  <br />
+                  <div class="form-group">
+                    <label for="inputB">Ingrese el valor de <b>b</b></label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputB"
+                      aria-describedby="bHelp"
+                      placeholder="valor de b"
+                    />
+                    <small id="bHelp" class="form-text text-muted"
+                      >Ingrese un valor entero para <b>b</b> .</small
+                    >
+                  </div>
+                  <br />
+                  <label id="labelAverage"> Resultado: </label
+                  ><label id="resultAverage"></label>
+                  <br />
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="average()"
+                  >
+                    Calcular promedio
+                  </button>
+                </form>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="string-manipulation"
+                role="tabpanel"
+                aria-labelledby="nav-string-manipulation-tab"
+              >
+                <br />
+                <h3>Ejercicio de panipulaicón de Strings</h3>
+                <br />
+                <p>
+                  Se debe crear un método que reciba una cadena de texto el cual
+                  deberá validar si al final de cada palabra enviada tiene un
+                  signo de admiración (!), si este tiene más de dos signos, solo
+                  deberá quitar uno.
+                </p>
+                <label for="inputText">Ingrese una cadena de texto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputText"
+                  aria-describedby="aHelp"
+                  placeholder="texto"
+                />
+                <br /><label id="labelManipulate"> Resultado: </label>
+                <label id="resultManipulate"></label>
+                <br /><br />
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="manipulate()"
+                >
+                  Procesar texto
+                </button>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="sum-array"
+                role="tabpanel"
+                aria-labelledby="nav-sum-array-tab"
+              >
+                <br />
+                <h3>Ejercicio de suma de arreglos</h3>
+                <br />
+                <p>
+                  Cree un método que reciba una matriz de solo números
+                  (positivos y negativos), con el fin de retornar un objeto con
+                  las siguientes propiedades: <br />1. La suma total de la
+                  matriz <br />2. La suma de sus enteros positivos <br />3. La
+                  suma de los números pares <br />4. La suma de los números
+                  impares Importante, <br />si la matriz no contiene nada, el
+                  resultado debe ser 0.
+                </p>
+                <form>
+                  <div class="form-group">
+                    <label for="inputN">Ingrese la cantidad de filas</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputN"
+                      aria-describedby="nHelp"
+                      placeholder="filas"
+                    />
+                    <small id="nHelp" class="form-text text-muted"
+                      >Ingrese un valor entero para las filas de la
+                      matriz.</small
+                    >
+                  </div>
+                  <br />
+                  <div class="form-group">
+                    <label for="inputM">Ingrese la cantidad de columnas</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputM"
+                      aria-describedby="mHelp"
+                      placeholder="columnas"
+                    />
+                    <small id="mHelp" class="form-text text-muted"
+                      >Ingrese un valor entero para la cantidad de
+                      columnas.</small
+                    >
+                  </div>
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="produceMatrix()"
+                  >
+                    Producir matriz
+                  </button>
+                  <br /><br />
+                  <form id="inputField" role="form">
+                    <div id="div-matrix"></div>
+                  </form>
+                  <br />
+                  <label id="labelSum"> Resultado: </label
+                  ><label id="resultSum"></label>
+                  <br />
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="sumArray()"
+                  >
+                    Procesar matriz
+                  </button>
+                </form>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="transformation-array"
+                role="tabpanel"
+                aria-labelledby="nav-transformation-array-tab"
+              >
+                <br />
+                <h3>Ejericicio de transformación de arreglos</h3>
+                <br />
+                <p>
+                  Cree un método que reciba un arreglo bidimensional con
+                  elementos alfanuméricos y un parámetro de orden, este método
+                  debe retornar un arreglo unidimensional solo con los elementos
+                  de tipo entero y en el orden que se le envía (ASC o DESC)
+                </p>
+                <form>
+                  <div class="form-group">
+                    <label for="inputRows">Ingrese la cantidad de filas</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputRows"
+                      aria-describedby="nHelp"
+                      placeholder="filas"
+                    />
+                    <small id="nHelp" class="form-text text-muted"
+                      >Ingrese un valor entero para las filas de la
+                      matriz.</small
+                    >
+                  </div>
+                  <br />
+                  <div class="form-group">
+                    <label for="inputColumns">Ingrese la cantidad de columnas</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputColumns"
+                      aria-describedby="mHelp"
+                      placeholder="columnas"
+                    />
+                    <small id="mHelp" class="form-text text-muted"
+                      >Ingrese un valor entero para la cantidad de
+                      columnas.</small
+                    >
+                  </div>
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="produceMatrixTran()"
+                  >
+                    Producir matriz
+                  </button>
+                  <br /><br />
+                  <label for="inputRows">Elija el orden numérico</label>
+                  <br><br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioAsc">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Ascendente
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioDesc" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Descendente
+                    </label>
+                  </div>
+                    <br>
+                  <form id="inputField" role="form">
+                    <div id="div-matrix-tran"></div>
+                  </form>
+                  <br>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="transform()"
+                  >
+                    Procesar matriz
+                  </button>
+                  <br><br>
+                  <label id="labelTran"> Resultado: </label
+                    ><label id="resultTran"></label>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="mycows"
+                role="tabpanel"
+                aria-labelledby="nav-mycows-tab"
+              >
+                <br />
+                <h3>Ejericicio "My cows"</h3>
+                <br />
+                <p>
+                   En la hacienda las “7 vacas flacas” tienen N vacas. El dueño los contrata para que diseñe
+                  un programa que guarde en una matriz de dimensión 7xN la producción de leche diaria (en
+                  litros) de cada una de las vacas, durante una semana, la solución planteada debe cumplir
+                  con los requisitos propuestos.
+                  <br> <br>
+                  Requerimientos:
+                  <br> <br>
+                  a. El tamaño de la matriz debe ser máximo de 7x50.
+                  <br>b. El usuario del software mediante una variable N indica cuántas vacas tiene la
+                  hacienda, mínimo 3 vacas máximo 50. (se debe validar el número de vacas y no
+                  continuar con la ejecución del programa hasta que este valor sea correcto).
+                  <br>c. La producción de leche de cada vaca está entre 0.0 y 11.9 litros, se debe validar
+                  este valor para cada una de las vacas, impidiendo la continuación de la siguiente lectura
+                  hasta que se ingrese un dato válido.<br><br>
+                  El programa debe calcular y mostrar:
+                  <br><br>a. La producción total de leche del hato en cada uno de los siete días.
+                  <br>b. El día de la semana con mayor y menor producción.
+                  <br>c. El número de la vaca que dio más leche en cada día.
+                </p>
+                <label for="inputB">Ingrese la cantidad de vacas</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputCows"
+                  aria-describedby="bHelp"
+                  placeholder="cantidad de vacas"
+                /><small id="bHelp" class="form-text text-muted"
+                >Ingrese un valor entero entre 3 y 50 .</small
+              >
+                <br><br>
+                <h3 for="inputcow" id="labelCows">Producción total del hato en cada uno de los siete días</h3>
+                <br>
+                <br>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Dia</th>
+                      <th scope="col">Producción del dia</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td id="production1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td id="production2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td id="production3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td id="production4"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td id="production5"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <td id="production6"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <td id="production7"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <h3 for="inputcow" id="labelCows">Día de la semana con mayor y menor producción</h3>
+                <br>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Dia de mayor producción</th>
+                      <th scope="col">Dia de menor producción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="mayorProduction">   </td>
+                      <td id="minorProduction">   </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <h3 for="inputcow" id="labelCows">El número de la vaca que dio más leche en cada día</h3>
+                <br>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Dia</th>
+                      <th scope="col">Vaca(s) más productora(a)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td id="best1"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td id="best2"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td id="best3"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td id="best4"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td id="best5"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <td id="best6"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <td id="best7"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="myCows()"
+                  >
+                    Ejecutar
+                  </button>
+                  <div id="div-cows"></div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tracking"
+                role="tabpanel"
+                aria-labelledby="nav-tracking-tab"
+              >
+                <br />
+                <h3>Ejericicio tracking Cooridandora</h3>
+                <br />
+                <p>
+                  Se requiere crear un método, el cual permita obtener por medio de una respuesta el tracking
+                  operativo referente a una guía en específico. Para lograr dicha respuesta, se deberá
+                  consumir dos servicios expuestos los cuales arrojaran:
+                  <br><br>Guias:<br>https://api.coordinadora.com/cm-model-testing/api/v1/talentos/
+                  <br><br>Checkpoint: (Tracking)<br><br>
+                  https://api.coordinadora.com/cm-model-testing/api/v1/talentos/checkpoint
+                  <br><br>El endpoint que consume el método deberá solicitar e identificar un número de guia
+                  (codigo_remision), el cual está compuesto por 11 dígitos o una etiqueta 1d el cual está
+                  compuesto por 15 dígitos y siempre comienza con el número 7.
+                  <br><br>Esta solicitud debe ser a traves de parametro en la url ejemplo:
+                  localhost:8080/challenge/tracking/{codigo}
+                  <br><br>Al finalizar el método deberá resolver el siguiente mensaje de acuerdo al código que se
+                  envió.
+                </p>
+                <label for="inputB">Ingrese el código para el seguimiento</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputCode"
+                  aria-describedby="bHelp"
+                  placeholder="código"
+                />
+                <br>
+                <button
+                type="button"
+                class="btn btn-primary"
+                onclick="tracking()"
+              >Ejecutar</button>
+              <br><br>
+              <div id="div-tracking" >
+                <code class="prettyprint" id="label-tracking"></code>
+              </div>
+                <br>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="score-array"
+                role="tabpanel"
+                aria-labelledby="nav-score-array-tab"
+              >
+                <br />
+                <h3>Ejericicio Score Array</h3>
+                <br />
+                <p>
+                  En un método, a partir de una matriz de números enteros enviada por parámetros, retorne
+                  una puntuación total basada en los siguientes criterios:<br><br>
+                  1. Agrega 1 punto por cada número par en el arreglo.
+                  <br>2. Agrega 3 puntos por cada número impar en el arreglo, exceptuando el número 5
+                  <br>3. Agrega 5 puntos a cada número 5 que aparezca en el arreglo.
+                  <br><br>Nota, el 0 es considerado par.
+                </p>
+                <label for="inputB">Ingrese una lista de números separados por coma(,)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputList"
+                  aria-describedby="bHelp"
+                  placeholder="lista de números"
+                />
+                <br>
+                <label for="labelScore" id="labelScore">Resultado: </label>
+                <label for="resultScore" id="resultScore"></label>
+                <br>
+                <button
+                type="button"
+                class="btn btn-primary"
+                onclick="score()"
+              >Ejecutar</button>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="docs"
+                role="tabpanel"
+                aria-labelledby="nav-docs-tab"
+              >
+              <br />
+              <h3>Documentación</h3>
+              <br />
+              <p>
+                Para ver la documentación del reto oprima el siguiente botón
+              </p>
+              <button
+              type="button"
+              class="btn btn-primary"
+              onclick="displayDoc()"
+            >Ver documentación</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function average() {
+        var a = document.getElementById("inputA").value;
+        var b = document.getElementById("inputB").value;
+        if (
+          a == undefined ||
+          b == undefined ||
+          a == null ||
+          b == null ||
+          a == "" ||
+          b == ""
+        ) {
+          document.getElementById("labelAverage").innerHTML =
+            "  Favor llenar los campos necesarios";
+        } else {
+          document.getElementById("labelAverage").innerHTML =
+            "Resultado:";
+          const data = {
+            a: Number(a),
+            b: Number(b)
+          };
+          const baseURL = "http://localhost:4000/challenge/average";
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("POST", baseURL, true);
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.send(JSON.stringify(data));
+          xhttp.onload = function () {
+            document.getElementById("resultAverage").innerHTML = JSON.parse(
+              xhttp.response
+            ).response;
+          };
+        }
+      }
+      function manipulate() {
+        var text = document.getElementById("inputText").value;
+        if (text == undefined || text == null || text == "") {
+          document.getElementById("labelManipulate").innerHTML =
+            "  Favor llenar los campos necesarios";
+        } else {
+          document.getElementById("labelManipulate").innerHTML =
+            "Resultado: ";
+          const data = {
+            string: text
+          };
+          const baseURL = "http://localhost:4000/challenge/string-manipulation";
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("POST", baseURL, true);
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.send(JSON.stringify(data));
+          xhttp.onload = function () {
+            document.getElementById("resultManipulate").innerHTML = JSON.parse(
+              xhttp.response
+            ).response;
+          };
+        }
+      }
+      function produceMatrix() {
+        var filas = document.getElementById("inputN").value;
+        var columnas = document.getElementById("inputM").value;
+        var parent = document.getElementById("div-matrix");
+        while (parent.firstChild) {
+          parent.removeChild(parent.lastChild);
+        }
+        for (let i = 0; i < filas; i++) {
+          for (let j = 0; j < columnas; j++) {
+            var input = document.createElement("input");
+            input.setAttribute("type", "number");
+            input.setAttribute("id", "id" + i + j);
+            parent.appendChild(input);
+          }
+          var space = document.createElement("br");
+          parent.appendChild(space);
+        }
+      }
+      function produceMatrixTran() {
+        var filas = document.getElementById("inputRows").value;
+        var columnas = document.getElementById("inputColumns").value;
+        var parent = document.getElementById("div-matrix-tran");
+        while (parent.firstChild) {
+          parent.removeChild(parent.lastChild);
+        }
+        for (let i = 0; i < filas; i++) {
+          for (let j = 0; j < columnas; j++) {
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("id", "id" + i + j);
+            parent.appendChild(input);
+          }
+          var space = document.createElement("br");
+          parent.appendChild(space);
+        }
+      }
+      function sumArray() {
+        var children = document.getElementById("div-matrix").children;
+        var inputs = [];
+        for (let i = 0; i < children.length; i++) {
+          if (children[i].id.includes("id")) {
+            inputs.push(children[i]);
+          }
+        }
+        var datas = [];
+        inputs.forEach((element) => datas.push(Number(element.value)));
+        var array = [];
+        array.push(datas);
+        var body = { matrix: array };
+        const baseURL = "http://localhost:4000/challenge/sum-array";
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", baseURL, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(JSON.stringify(body));
+        xhttp.onload = function () {
+          response = JSON.parse(xhttp.response).response;
+          var stringResponse =
+            " Suma total de la matriz = " +
+            response.sumaTotal +
+            "Suma de los número positivos = " +
+            response.sumaPOsitivos +
+            "Suma de pares = " +
+            response.sumaPares +
+            "Suma de impares = " +
+            response.sumaImpares;
+          document.getElementById("resultSum").innerHTML = stringResponse;
+        };
+      }
+      function transform(){
+        var children = document.getElementById("div-matrix-tran").children;
+        var inputs = [];
+        for (let i = 0; i < children.length; i++) {
+          if (children[i].id.includes("id")) {
+            inputs.push(children[i]);
+          }
+        }
+        var datas = [];
+        inputs.forEach((element) => datas.push(element.value));
+        var array = [];
+        array.push(datas);
+        var orden = document.getElementById('radioAsc').checked== true ? 'ASC' : 'DESC'
+        var body = { orden, matrix: array };
+        const baseURL = "http://localhost:4000/challenge/transform-array";
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", baseURL, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(JSON.stringify(body));
+        xhttp.onload = function () {
+          response = JSON.parse(xhttp.response).response;
+          document.getElementById("resultTran").innerHTML = response
+        }
+      }
+      function myCows(){
+        var n = Number(document.getElementById("inputCows").value)
+        if (n == undefined || n == null || n == "" || n==0 || n < 3 || n > 50) {
+          document.getElementById("labelCows").innerHTML =
+            "  Favor llenar los campos necesarios con un valor en el rango solicitado";
+        }else{
+          const data = {
+            n: n,
+          };
+          const baseURL = "http://localhost:4000/challenge/mycows";
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("POST", baseURL, true);
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.send(JSON.stringify(data));
+          xhttp.onload = function () {
+            var response = JSON.parse( xhttp.response).response;
+            productionPerDay(response.totalPerday)
+            bestAndWorstDays(response.highestProductionDay, response.lowerProductionDay)
+            bestCows(response.bestCowPerDay)
+          };
+        }
+      }
+      function productionPerDay(totalPerday){
+        for(let i = 0; i < totalPerday.length; i++){
+          document.getElementById(`production${i+1}`).innerHTML = totalPerday[i]
+        }
+      }
+      function bestAndWorstDays(best,worst){
+        document.getElementById("mayorProduction").innerHTML = Number(best)+1
+        document.getElementById("minorProduction").innerHTML = Number(worst)+1
+      }
+      function bestCows(bestCowPerDay){
+        for(let i = 0; i < bestCowPerDay.length; i++){
+          document.getElementById(`best${i+1}`).innerHTML = Number(bestCowPerDay[i])+1
+        }
+      }
+      function tracking(){
+        var code = Number(document.getElementById("inputCode").value)
+        if (code == undefined || code == null || code == "") {
+          document.getElementById("labelCows").innerHTML =
+            "  Favor llenar los campos necesarios.";
+        }else{
+          const baseURL = `http://localhost:4000/challenge/tracking/${code}`;
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("GET", baseURL, true);
+          xhttp.send(code)
+          xhttp.onload = function () {
+            var response = JSON.parse( xhttp.response).response;
+            document.getElementById("label-tracking").innerHTML = JSON.stringify(response,null,'\t');
+          };
+        }
+      }
+      function score(){
+        var lista = document.getElementById("inputList").value;
+        var re = /^[0-9]{1,5}( *, *[0-9]{1,5})*$/
+        if(lista == undefined || lista == null || lista == "" || !re.test(lista)){
+          document.getElementById("labelScore").innerHTML =
+            "  Formato incorrecto de lista"
+          document.getElementById("resultScore").innerHTML = ""
+        }else{
+          document.getElementById("labelScore").innerHTML =
+            " Resultado: "
+          const baseURL = `http://localhost:4000/challenge/array-score?input=${lista}`;
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("POST", baseURL, true);
+          xhttp.send(lista)
+          xhttp.onload = function () {
+            var response = JSON.parse( xhttp.response).response;
+            document.getElementById("resultScore").innerHTML = response;
+          };
+        }
+      }
+      function displayDoc(){
+        window.open("http://localhost:4000/challenge/docs");
+      }
+   </script>
+    <!-- jQuery antes que bootstrap.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
