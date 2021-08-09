@@ -12,6 +12,9 @@ npm run dev
 para correr el proyecto, haciendo uso del archivo *api.rest* se pueden ejecutar peticiones sobre cada uno de los endpoints, clickeando el enlace *send request* sobre cada endpoint.
 
 Luego de haber puesto en marcha el proyecto, en el navegador se puede dirigir a **http://localhost:4000/challenge**, donde abrirá una interfaz de usuario para la ejecución de cad auno de los ejericicos.
+## Video
+
+https://www.youtube.com/watch?v=Gl1mqFCIzX0
 
 ## Puntos teóricos
 
